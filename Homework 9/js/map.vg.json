@@ -13,24 +13,29 @@
         "lookup": "properties.NAME",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
+            "url": "https://raw.githubusercontent.com/mvitas1/3179/main/Homework%209/data/forbes_2022_billionaires.csv"
           },
-          "key": "Country",
-          "fields": ["Active"]
+          "key": "countryOfCitizenship",
+          "fields": ["Number of Billionaires"]
         }
       },
-      {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+      {
+        "aggregate": [
+          { "op": "count", "as": "Number of Billionaires" }
+        ],
+        "groupby": ["countryOfCitizenship"]
+      }
     ],
-    "mark": {"type": "geoshape"},
+    "mark": { "type": "geoshape" },
     "encoding": {
       "color": {
-        "field": "Active Cases",
+        "field": "Number of Billionaires",
         "type": "quantitative",
-        "scale": {"type": "log"}
+        "scale": { "type": "log" }
       },
       "tooltip": [
-        {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-        {"field": "Active", "type": "quantitative"}
+        { "field": "properties.NAME", "type": "nominal", "title": "Country of Citizenship" },
+        { "field": "Number of Billionaires", "type": "quantitative" }
       ]
     }
   }
