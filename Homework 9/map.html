@@ -10,7 +10,7 @@
   <script>
     const spec = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Billionares of the World",
+  "title": "Life Expectancy of the World",
   "width": 800,
   "height": 400,
   "data": {
@@ -29,13 +29,13 @@
       "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
       "encoding": {"tooltip": {"field": "note"}}
     },
-    /*{
+    {
       "data": {
         "url": "https://raw.githubusercontent.com/mvitas1/3179/main/Homework%209/js/ne_110m_ocean.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_ocean"}
       },
       "mark": {"type": "geoshape", "fill": "skyblue"}
-    },*/
+    },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/mvitas1/3179/main/Homework%209/js/ne_110m.topojson",
@@ -52,24 +52,25 @@
               "url": "https://raw.githubusercontent.com/mvitas1/3179/main/Homework%209/data/world-data-2023.csv"
             },
             "key": "Country",
-            "fields": ["Fertility Rate"]
+            "fields": ["Life expectancy"]
           }
         },
       ],
       "mark": {"type": "geoshape", "stroke": "white"},
       "encoding": {
         "color": {
-          "field": "Fertility Rate",
+          "field": "Life expectancy",
           "type": "quantitative",
+          "title" : "Life Expectancy (in Years)",
           "scale": {
-            "type": "threshold",
-            "domain": [1, 2, 5],
-            "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+            "type": "saturation",
+            "domain": [50, 60, 70, 80 ,90],
+            "range": ["#6efab0","#1bd2b3","#00aaa9","#008191","#265a6d","#2a4858"]
           }
         },
         "tooltip": [
           {"field": "properties.NAME_LONG", "type": "nominal", "title": "Country"},
-          {"field": "Fertility Rate", "type": "quantitative"},
+          {"field": "Life expectancy", "type": "quantitative"},
         ]
       }
     }
