@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Life Expectancy of the World",
+  "title": "Birth Rate Per 1000 Population",
   "width": 800,
   "height": 400,
   "projection": {"type": "equalEarth"},
@@ -16,7 +16,7 @@
           "url": "https://raw.githubusercontent.com/mvitas1/3179/main/Homework%209/data/world-data-2023.csv"
         },
         "key": "Country",
-        "fields": ["Life expectancy"]
+        "fields": ["Birth Rate"]
       }
     }
 
@@ -24,14 +24,14 @@
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Life expectancy",
+      "field": "Birth Rate",
       "type": "quantitative",
-      "title" : "Life Expectancy (in Years)",
+      "title" : "Birth Rate Per 1000 Population",
       "scale": {"type": "log"}
     },
     "tooltip": [
       {"field": "properties.NAME_LONG", "type": "nominal", "title": "Country"},
-      {"field": "Life expectancy", "type": "quantitative"}
+      {"field": "Birth Rate", "type": "quantitative"}
     ]
   }
 }
