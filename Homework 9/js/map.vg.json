@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Birth Rate Per 1000 Population",
+  "title": "Infant Mortality Rate Per 1000 People in 2023",
   "width": 800,
   "height": 400,
   "projection": {"type": "equalEarth"},
@@ -16,7 +16,7 @@
           "url": "https://raw.githubusercontent.com/mvitas1/3179/main/Homework%209/data/world-data-2023.csv"
         },
         "key": "Country",
-        "fields": ["Birth Rate"]
+        "fields": ["Infant mortality"]
       }
     }
 
@@ -24,14 +24,14 @@
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Birth Rate",
+      "field": "Infant mortality",
       "type": "quantitative",
-      "title" : "Birth Rate Per 1000 Population",
+      "title" : "Infant Mortality (Per 1000)",
       "scale": {"type": "log"}
     },
     "tooltip": [
       {"field": "properties.NAME_LONG", "type": "nominal", "title": "Country"},
-      {"field": "Birth Rate", "type": "quantitative"}
+      {"field": "Infant mortality", "type": "quantitative"}
     ]
   }
 }
