@@ -6,18 +6,26 @@
     },
     "transform": [
       {"filter": {"field": "Minimum wage", "valid": true}},
-      {"calculate": "datum['Minimum wage']", "as": "minimum_wage_number"},
-      {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "minimum_wage_number", "order": "descending"}]},
+      {"calculate": "toNumber(datum['Minimum wage'])", "as": "MinimumWageNumeric"},
+      {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "MinimumWageNumeric", "order": "descending"}]},
       {"filter": {"field": "rank", "lte": 10}}
     ],
     "encoding": {
       "y": {"field": "Country", "type": "nominal", "sort": {"field": "rank", "order": "ascending"}},
       "x": {"field": "Minimum wage", "type": "quantitative"},
+      "color": {"field": "Country", "type": "nominal", "scale": {"scheme": "category20c"}},
       "text": {"field": "Minimum wage", "type": "quantitative"},
       "tooltip": [
         {"field": "Country", "type": "nominal"},
         {"field": "Minimum wage", "type": "quantitative"}
       ]
     },
-    "mark": "bar"
+    "mark": {
+      "type": "bar",
+      "clip": true
+    },
+    "config": {
+      "view": {"stroke": "transparent"},
+      "axis": {"grid": false}
+    }
   }

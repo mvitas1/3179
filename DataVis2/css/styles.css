@@ -1,6 +1,6 @@
 /* Set the main background to grey */
 body {
-	background-color: #f0f0f0; /* You can adjust the color code to your preference */
+	background-color: #dbefff; /* You can adjust the color code to your preference */
     display: flex;
     flex-direction: column; /* Make the page content vertical */
     align-items: center;
@@ -9,6 +9,7 @@ body {
     padding: 20px; /* Add padding inside the border */
 	width: 1000px;
 	margin: 0 auto;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   
   /* Style text sections with white backgrounds */
@@ -39,11 +40,12 @@ body {
   }
 
   .pure-u-2-3 {
-	left: auto;
 	width: 66.66667%;
+	text-align: left;
   }
 
   .pure-u-1-3 {
 	
 	width: 33.33333%;
   }
+
