@@ -5,12 +5,19 @@
       "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"
     },
     "transform": [
-      {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "Minimum wage", "order": "descending"}]},
-      {"filter": "datum.rank <= 10"}
+      {"filter": {"field": "Minimum wage", "valid": true}},
+      {"calculate": "datum['Minimum wage']", "as": "minimum_wage_number"},
+      {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "minimum_wage_number", "order": "descending"}]},
+      {"filter": {"field": "rank", "lte": 10}}
     ],
     "encoding": {
-      "y": {"field": "Country", "type": "nominal", "sort": "-x"},
-      "x": {"field": "Minimum wage", "type": "quantitative"}
+      "y": {"field": "Country", "type": "nominal", "sort": {"field": "rank", "order": "ascending"}},
+      "x": {"field": "Minimum wage", "type": "quantitative"},
+      "text": {"field": "Minimum wage", "type": "quantitative"},
+      "tooltip": [
+        {"field": "Country", "type": "nominal"},
+        {"field": "Minimum wage", "type": "quantitative"}
+      ]
     },
     "mark": "bar"
   }
