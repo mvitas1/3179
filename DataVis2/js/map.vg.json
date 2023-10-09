@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Infant Mortality Rate Per 1000 People in 2023",
+  "title": "",
   "width": 800,
   "height": 400,
   "projection": {"type": "equalEarth"},
   "data": {
-    "url": "https://raw.githubusercontent.com/mvitas1/3179/main/Homework%209/js/ne_110m_admin_0_countries.topojson",
+    "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/js/ne_110m_admin_0_countries.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
   "transform": [
@@ -13,7 +13,7 @@
       "lookup": "properties.NAME_LONG",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mvitas1/3179/main/Homework%209/data/world-data-2023.csv"
+          "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"
         },
         "key": "Country",
         "fields": ["Life expectancy"]

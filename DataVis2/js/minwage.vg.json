@@ -1,0 +1,16 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bar chart of the top 10 countries with the highest minimum wage",
+    "data": {
+      "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"
+    },
+    "transform": [
+      {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "Minimum wage", "order": "descending"}]},
+      {"filter": "datum.rank <= 10"}
+    ],
+    "encoding": {
+      "y": {"field": "Country", "type": "nominal", "sort": "-x"},
+      "x": {"field": "Minimum wage", "type": "quantitative"}
+    },
+    "mark": "bar"
+  }
