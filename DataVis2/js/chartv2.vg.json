@@ -11,9 +11,19 @@
           "name": "country_selection",
           "bind": {
             "input": "select",
-            "options": [null, "Australia"],
-            "labels": ["Show All", "Australia"],
-            "name": "Country Selection: "
+            "options": [null, "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Australia/Oceania"],
+            "labels": ["Show All", "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"],
+            "name": "Continent Selection: "
           }
         }
       ],
@@ -28,7 +38,7 @@
         "filter": "datum['Minimum wage'] > 0 && datum['Unemployment rate'] > 0"
       },
       {
-        "filter": "country_selection == null || datum.Country == country_selection"
+        "filter": "country_selection == null || datum.Continent == country_selection"
       }
     ],
     "mark": "point",
@@ -44,13 +54,26 @@
         "scale": {"zero": false}
       },
       "color": {
-        "field": "Country",
+        "field": "Continent",
         "type": "nominal",
         "scale": {
-          "domain": {"param": "country_selection"},
-          "range": ["#1f77b4"]
-        },
-        "legend": null
+          "domain": [
+            "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Australia/Oceania"
+          ],
+          "range": [
+            "#e41a1c",
+            "#984ea3",
+            "#ff7f00",
+            "#a6cee3",
+            "#377eb8",
+            "#a65628"
+          ]
+        }
       },
       "tooltip": [
         {"field": "Country", "type": "nominal", "title": "Country"},
