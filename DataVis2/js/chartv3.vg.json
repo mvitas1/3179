@@ -3,8 +3,8 @@
     "data": {"url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"},
     "transform": [{
       "filter": {"and": [
-        {"field": "Fertility Rate", "valid": true},
-        {"field": "Birth Rate", "valid": true}
+        {"field": "Minimum wage", "valid": true},
+        {"field": "Unemployment rate", "valid": true}
       ]}
     }],
     "mark": "rect",
@@ -12,13 +12,13 @@
     "height": 200,
     "encoding": {
       "x": {
-        "bin": {"maxbins":60},
-        "field": "Fertility Rate",
+        "bin": {"maxbins":20},
+        "field": "Minimum wage",
         "type": "quantitative"
       },
       "y": {
-        "bin": {"maxbins": 40},
-        "field": "Birth Rate",
+        "bin": {"maxbins": 30},
+        "field": "Unemployment rate",
         "type": "quantitative"
       },
       "color": {
