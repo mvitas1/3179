@@ -145,6 +145,7 @@
           </p2>
         </div>
       </div>
+      <div id="vis4" class="vis-container"></div>
     </div>
   </div>
 
@@ -152,6 +153,7 @@
   var specVis1 = "js/chart.vg.json";
   var specVis2 = "js/map.vg.json";
   var specVis3 = "js/minwage.vg.json";
+  var specVis4 = "js/minwagebad.vg.json";
   vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
@@ -159,6 +161,9 @@
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
     vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 </script>

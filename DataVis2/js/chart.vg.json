@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 350,
     "height": 275,
-    "title": "Life Expectancy vs. Infant mortality",
+    "title": "",
     "data": {
       "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"
     },
@@ -77,7 +77,7 @@
           "color": {"value": "black"},
           "opacity": {
             "condition": {
-              "test": "datum['Country'] == 'Chad' || datum['Country'] == 'Japan' || datum['Country'] == 'Israel' || datum['Country'] == 'Niger' ||  datum['Country'] == 'Lesotho'",
+              "test": "datum['Country'] == 'Australia' || datum['Country'] == 'India' || datum['Country'] == 'Somalia'",
               "value": 1
             },
             "value": 0

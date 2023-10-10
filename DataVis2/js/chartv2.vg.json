@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 350,
+    "height": 275,
+    "title": "",
+    "data": {
+      "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"
+    },
+    "transform": [
+      {"filter": "datum['Maternal mortality ratio'] != null && datum['Birth Rate'] != null"},
+      {"filter": "!(datum['Country'] === 'Tuvalu' || datum['Country'] === 'Monaco' || datum['Country'] === 'Andorra')"},
+      {"filter": "datum['Maternal mortality ratio'] > 0 && datum['Birth Rate'] > 0"}
+    ],
+    "mark": "point",
+    "encoding": {
+        "x": {
+          "field": "Fertility Rate",
+          "type": "quantitative",
+          "scale": {"zero": false}
+        },
+        "y": {
+          "field": "Birth Rate",
+          "type": "quantitative",
+          "scale": {"zero": false}
+        },
+        "color": {"field": "Country", "type": "nominal"},
+        "shape": {"field": "Country", "type": "nominal"},
+        "tooltip": [
+            {"field": "Country", "type": "nominal", "title": "Country"},
+            {"field": "Birth Rate", "type": "quantitative", "title": "Birth Rate"},
+            {"field": "Fertility Rate", "type": "quantitative", "title": "Minimum wage"}
+            ] 
+      }
+    } 
+
+  
