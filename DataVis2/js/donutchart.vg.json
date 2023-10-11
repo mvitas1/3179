@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple donut chart with embedded data.",
+    "data": {"url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"},
+    "transform": [
+        {
+          "filter": "datum['Life expectancy'] != null && datum['Unemployment rate'] != null"
+        },
+        {
+          "filter": "!(datum['Country'] === 'Tuvalu' || datum['Country'] === 'Monaco' || datum['Country'] === 'Andorra')"
+        },
+        {
+          "filter": "datum['Lif expectancy'] > 0 && datum['Unemployment rate'] > 0"
+        }],
+    "mark": {"type": "arc", "innerRadius": 50},
+    "encoding": {
+      "theta": {"field": "Life expectancy", "type": "quantitative"},
+      "color": {"field": "Continent", "type": "nominal"}
+    }
+  }
+  
+  
