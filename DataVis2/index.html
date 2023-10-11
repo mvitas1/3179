@@ -13,7 +13,7 @@
 
 <body>
   <h2 style="text-align: center; margin-bottom: 0;">World Human Health Data Visualization</h2>
-  <h5 style="text-align: center; margin-top: 0; color: #999;">Data Visualization 2 by Marc Vitas</h5>
+  <h5 style="text-align: center; margin-top: 0; color: #464646;">Data Visualization 2 by Marc Vitas</h5>
   <div class="text-section">
   
   <p2>Introducing a visualisation containing data from the "Global Country Information Dataset 2023" – which is a comprehensive collection of vital statistics and indicators that offer 
@@ -28,12 +28,12 @@
     <h2 style="text-align: center; margin-bottom: 0; padding: 10px;">Life Expectancy in 2023</h2>
     <div class="pure-g">
       <div class="pure-u-2-3">
-        <div id="vis2" class="vis-container"></div>
+        <div id="vis" class="vis-container"></div>
         <script>
           const spec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "title": "Life expectancy in 2023",
-        "width": 200,
+        "width": 750,
         "height": 400,
         "data": {
           "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/js/ne_110m_admin_0_countries.topojson",
@@ -154,16 +154,26 @@
   var specVis2 = "js/map.vg.json";
   var specVis3 = "js/minwage.vg.json";
   var specVis4 = "js/minwagebad.vg.json";
-  vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
+  var specVis5 = "js/donutchart.vg.json";
+  var specVis6 = "js/chartv2.vg.json";
+  var specVis7 = "js/stackedhistogram.vg.json";
+    vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
-    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
     vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
     vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    vegaEmbed('#vis7', specVis7, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 </script>

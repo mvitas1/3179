@@ -1,16 +1,33 @@
 /* Set the main background to grey */
 body {
-	background-color: #dbefff; /* You can adjust the color code to your preference */
+    background-color: #f0f0f0; 
+
     display: flex;
     flex-direction: column; /* Make the page content vertical */
     align-items: center;
-	border: 2px solid black; /* Add a border around the content */
+
+    border: 2px solid black; /* Add a border around the content */
     border-radius: 0px;
     padding: 20px; /* Add padding inside the border */
-	width: 1000px;
-	margin: 0 auto;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
+    width: 1000px;
+    margin: 0 auto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: relative; /* Required for positioning pseudo-element */
+
+}
+
+/* Add an outer box with a different background color */
+body::before {
+    content: "";
+    position: absolute;
+    top: -2px; /* Adjust to match border width */
+    left: -2px; /* Adjust to match border width */
+    right: -2px; /* Adjust to match border width */
+    bottom: -2px; /* Adjust to match border width */
+    background-color: #c8c8c8; 
+    z-index: -1; 
+}
+
   
   /* Style text sections with white backgrounds */
   .text-section {
