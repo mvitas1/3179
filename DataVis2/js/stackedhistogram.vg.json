@@ -7,6 +7,31 @@
         "parse": {"Life expectancy": "number"}
       }
     },
+    "params": [
+      {
+        "name": "country_selection",
+        "bind": {
+          "input": "select",
+          "options": [null, "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Australia/Oceania"],
+          "labels": ["Show All", "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"],
+          "name": "Continent Selection: "
+        }
+      }
+    ],"transform": [
+      {
+        "filter": "country_selection == null || datum.Continent == country_selection"
+      }
+    ],
     "mark": "bar",
     "encoding": {
       "x": {
@@ -24,9 +49,19 @@
         "field": "Continent",
         "type": "nominal",
         "scale": {
-          "domain": ["Africa", "Asia", "Europe", "North America", "Australia/Oceania", "South America"],
-          "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"]
-        },
+          "domain": [
+            "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Australia/Oceania"
+          ],
+          "range": [
+            "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"
+          ]
+        }
+      ,
         "title": "Continent"
       }
     }

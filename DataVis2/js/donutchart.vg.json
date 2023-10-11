@@ -3,20 +3,45 @@
     "description": "A simple donut chart with embedded data.",
     "data": {"url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"},
     "transform": [
-        {
-          "filter": "datum['Life expectancy'] != null && datum['Unemployment rate'] != null"
-        },
-        {
-          "filter": "!(datum['Country'] === 'Tuvalu' || datum['Country'] === 'Monaco' || datum['Country'] === 'Andorra')"
-        },
-        {
-          "filter": "datum['Lif expectancy'] > 0 && datum['Unemployment rate'] > 0"
-        }],
-    "mark": {"type": "arc", "innerRadius": 50},
-    "encoding": {
-      "theta": {"field": "Life expectancy", "type": "quantitative"},
-      "color": {"field": "Continent", "type": "nominal"}
-    }
+      {
+        "filter": "datum['Infant mortality'] != null && datum['Unemployment rate'] != null"
+      },
+      {
+        "filter": "!(datum['Country'] === 'Tuvalu' || datum['Country'] === 'Monaco' || datum['Country'] === 'Andorra')"
+      },
+      {
+        "filter": "datum['Infant mortality'] > 0 && datum['Unemployment rate'] > 0"
+      }
+    ],
+    "title": "Average Infant Mortality by Continent",
+    "layer": [
+      {
+        "mark": {"type": "arc", "innerRadius": 50},
+        "encoding": {
+          "theta": {"field": "Infant mortality", "type": "quantitative", "aggregate": "average"},
+          "color": {"field": "Continent", "type": "nominal"},
+          "tooltip": [
+            {"field": "Continent", "title": "Continent"},
+            {"field": "Infant mortality", "type": "quantitative", "aggregate": "average", "title": "Avg Infant Mortality", "format": ".2f"}
+          ]
+        }
+      },
+      {
+        "mark": {"type": "text", "baseline": "middle", "align": "center", "dx": 0, "dy": -10}, 
+        "encoding": {
+          "text": {"value": "World Average: "}
+        }
+      },
+      {
+        "mark": {"type": "text", "baseline": "middle", "align": "center", "dx": 0, "dy":5},
+        "encoding": {
+          "text": {"field": "Infant mortality", "type": "quantitative", "aggregate": "average", "format": ".2f"}
+        }
+      }
+    ]
   }
+  
+  
+  
   
   
