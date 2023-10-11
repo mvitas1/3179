@@ -34,16 +34,18 @@ body {
 
 </style>
 <body>
-  <h2 style="text-align: center; margin-bottom: 0;">World Human Health Data Visualization</h2>
-  <h5 style="text-align: center; margin-top: 0; color: #464646;">Data Visualization 2 by Marc Vitas</h5>
+  <h1 style="text-align: center; margin-bottom: 0; font-family: 'Open Sans', sans-serif;">World Human Health & Economy</h1>
+  <h4 style="text-align: center; margin-top: 1; color: #464646; font-family: 'Open Sans', sans-serif; font-style: italic;">Data Visualization 2 by Marc Vitas</h4>
   <div class="text-section">
   
-  <p2>Introducing a visualisation containing data from the "Global Country Information Dataset 2023" – which is a comprehensive collection of vital statistics and indicators that offer 
+  <p style="text-align: center; margin-top: 0; font-family: 'Open Sans', sans-serif; font-style: italic; font-size:medium; font-weight: bold;">Introducing a visualisation containing data from the "Global Country Information Dataset 2023"</p>
+  <p>
+    which is a comprehensive collection of vital statistics and indicators that offer 
     insights into the state of our global health. This a valuable resource that provides a 
     view of the factors influencing public health and prosperity worldwide. Dive into this data visualisation to uncover trends and 
     opportunities for improving the well-being of populations across the globe. Whether you're a skeptic, 
     or anyone passionate about global health, this visualisation is your key to understanding and 
-    addressing critical health factors on a global scale.</p2>
+    addressing critical health factors on a global scale.</p>
   </div>
 
   <div class="text-section">
@@ -54,7 +56,6 @@ body {
         <script>
           const spec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-        "title": "Life expectancy in 2023",
         "width": 750,
         "height": 400,
         "data": {
@@ -78,14 +79,14 @@ body {
               "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/js/ne_110m_ocean.topojson",
               "format": {"type": "topojson", "feature": "oceans"}
             },
-            "mark": {"type": "geoshape", "fill": "lightblue"}
+            "mark": {"type": "geoshape", "fill": "white"}
           },
           {
             "data": {
               "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/js/ne_110m.topojson",
               "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
             },
-            "mark": {"type": "geoshape", "fill": null, "stroke": "gray"}
+            "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
           },
           {
             "transform": [
@@ -109,7 +110,7 @@ body {
                 "scale": {
                   "type": "saturation",
                   "domain": [50, 100],
-                  "range": ['#94003a', '#faeda9']
+                  "scheme": "bluegreen"
                 }
               },
               "tooltip": [
@@ -119,9 +120,9 @@ body {
             }
           }
         ],
-        "config": {}
+        "config": {"view": { "menu": false },"ui": { "menu": null } }
       };
-          vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+          vegaEmbed("#vis", spec, { mode: "vega-lite" }).then(console.log).catch(console.warn);
         </script>
       </div>
       <div class="pure-u-1-3">
@@ -135,23 +136,23 @@ body {
       This map visualizes the Infant Mortality Rate per 1000 people in the year 2023 across different countries. The data is represented using a geographical map</p>
     </div>
 
-  <div class="text-section">
-    <h3 style="text-align: center; margin-bottom: 0; padding: 10px;">Life Expectancy vs Infant Mortality</h3>
-    <div class="pure-g">
-      <div class="pure-u-2-3">
-        <div id="vis1" class="vis-container" style="text-align: left;"></div>
+    <div class="text-section" style="display: flex; flex-direction: column; align-items: center;">
+      <h3 style="text-align: center; margin-bottom: 0; padding: 10px;">Life Expectancy vs Infant Mortality</h3>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div style="width: 65%;">
+              <div id="vis1" class="vis-container" style="text-align: left;"></div>
+          </div>
+          <div style="width: 30%;">
+              <div class="description">
+                  <p>
+                      This interactive chart displays the relationship between Life Expectancy and Infant mortality for various countries. 
+                      You can adjust the population threshold using the slider above to filter countries by population. 
+                      The size of each circle represents the population of a country, and you can hover over the circles
+                      to view additional information.
+                  </p>
+              </div>
+          </div>
       </div>
-      <div class="pure-u-1-3">
-        <div class="description">
-          <p2>
-            This interactive chart displays the relationship between Life Expectancy and Infant mortality for various countries. 
-            You can adjust the population threshold using the slider above to filter countries by population. 
-            The size of each circle represents the population of a country, and you can hover over the circles
-            to view additional information.
-          </p2>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="text-section" style="display: flex; flex-direction: column; align-items: center; text-align: left;">

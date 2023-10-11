@@ -41,11 +41,15 @@
         "filter": "country_selection == null || datum.Continent == country_selection"
       }
     ],
-    "mark": "point",
+    "mark": {
+      "type": "circle",
+      "size": 100
+    },
     "encoding": {
       "x": {
         "field": "Minimum wage",
         "type": "quantitative",
+        "title": "Minimum Wage ($USD)",
         "scale": {"zero": false}
       },
       "y": {

@@ -14,7 +14,7 @@
       ],
     "encoding": {
       "y": {"field": "Country", "type": "nominal", "sort": {"field": "rank", "order": "ascending"}},
-      "x": {"field": "Minimum wage", "type": "quantitative"},
+      "x": {"field": "Minimum wage", "type": "quantitative","title": "Minimum Wage ($USD)"},
       "color": {"field": "Country", "type": "nominal", "scale": {"scheme": "blues"}},
       "text": {"field": "Minimum wage", "type": "quantitative"},
       "tooltip": [
