@@ -11,6 +11,28 @@
 
 </head>
 
+<style>
+
+body {
+  background-image: url("images/background.jpg");
+  background-color: #f0f0f0;
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 0px;
+  padding: 20px;
+  width: 1000px;
+  margin: 0 auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+}
+
+</style>
 <body>
   <h2 style="text-align: center; margin-bottom: 0;">World Human Health Data Visualization</h2>
   <h5 style="text-align: center; margin-top: 0; color: #464646;">Data Visualization 2 by Marc Vitas</h5>
@@ -132,22 +154,61 @@
     </div>
   </div>
 
-  <div class="text-section">
-    <h3 style="text-align: center; margin-bottom: 0; padding: 10px;">Countries with Best Minimum Wage</h3>
-    <div class="pure-g">
-      <div class="pure-u-2-3">
-        <div id="vis3" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-3">
-        <div class="description">
-          <p2>
-            <strong>Australia</strong> stands out prominently on this chart, boasting the highest minimum wage among the top 10 countries. As you can see, the majority of these countries with the highest minimum wages are European nations, reflecting their commitment to fair labor practices and ensuring a decent standard of living for their workers. This chart provides a visual representation of the minimum wage levels in these select countries, with Australia leading the way.
-          </p2>
+  <div class="text-section" style="display: flex; flex-direction: column; align-items: center; text-align: left;">
+    <h3 style="text-align: left; ">How Do Infant Mortality Rates per 1000 Differ?</h3>
+    <div style="display: flex; justify-content: center;">
+      <div style="flex: 1; text-align: right;">
+        <div class="description" style="padding: 20px; text-align: center;">
+          <p>
+            This interactive chart displays the relationship between Life Expectancy and Infant mortality for various countries. 
+            You can adjust the population threshold using the slider above to filter countries by population. 
+            The size of each circle represents the population of a country, and you can hover over the circles to view additional information.
+          </p>
         </div>
       </div>
-      <div id="vis4" class="vis-container"></div>
+      <div style="flex: 1; text-align: left;">
+        <div id="vis7" class="vis-container"></div>
+      </div>
     </div>
   </div>
+
+  <div class="text-section" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <h3>Countries with the Highest & Lowest Minimum Wage</h3>
+    <div class="text-container">
+      <p>
+        <strong>Australia</strong> stands out prominently on this chart, boasting the highest minimum wage among the top 10 countries. As you can see, the majority of these countries with the highest minimum wages are European nations, reflecting their commitment to fair labor practices and ensuring a decent standard of living for their workers. This chart provides a visual representation of the minimum wage levels in these select countries, with Australia leading the way.
+      </p>
+    </div>
+    <div class="chart-section" style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="chart-container" style="flex: 1; padding: 10px;">
+        <div id="vis3" class="vis-container"></div>
+      </div>
+      <div class="chart-container" style="flex: 1; padding: 10px;">
+        <div id="vis4" class="vis-container"></div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <div class="text-section" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <h3 style="margin-bottom: 0; padding: 10px; text-align: center;">Does a countries Minimum Wage Affect Unemployement Rate?</h3>
+    <div style="display: flex; align-items: center;">
+      <div style="flex: 1; text-align: left;">
+        <div class="description" style="text-align: left;">
+            <p>
+                <strong>Australia</strong> stands out prominently on this chart, boasting the highest minimum wage among the top 10 countries. As you can see, the majority of these countries with the highest minimum wages are European nations, reflecting their commitment to fair labor practices and ensuring a decent standard of living for their workers. This chart provides a visual representation of the minimum wage levels in these select countries, with Australia leading the way.
+            </p>
+        </div>
+    </div>
+        <div style="flex: 1; text-align: center;">
+            <div id="vis6" class="vis-container" style="max-width: 100%; padding: 10px;"></div>
+        </div>
+        
+    </div>
+</div>
+
+
 
 <script type="text/javascript">
   var specVis1 = "js/chart.vg.json";

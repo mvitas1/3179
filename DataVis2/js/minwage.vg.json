@@ -1,31 +1,32 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Bar chart of the top 10 countries with the highest minimum wage",
-    "data": {
-      "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"
-    },
-    "transform": [
-      {"filter": {"field": "Minimum wage", "valid": true}},
-      {"calculate": "toNumber(datum['Minimum wage'])", "as": "MinimumWageNumeric"},
-      {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "MinimumWageNumeric", "order": "descending"}]},
-      {"filter": {"field": "rank", "lte": 10}}
-    ],
-    "encoding": {
-      "y": {"field": "Country", "type": "nominal", "sort": {"field": "rank", "order": "ascending"}},
-      "x": {"field": "Minimum wage", "type": "quantitative"},
-      "color": {"field": "Country", "type": "nominal", "scale": {"scheme": "category20c"}},
-      "text": {"field": "Minimum wage", "type": "quantitative"},
-      "tooltip": [
-        {"field": "Country", "type": "nominal"},
-        {"field": "Minimum wage", "type": "quantitative", "format": "$,.2f"}
-      ]
-    },
-    "mark": {
-      "type": "bar",
-      "clip": true
-    },
-    "config": {
-      "view": {"stroke": "transparent"},
-      "axis": {"grid": false}
-    }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bar chart of the top 10 countries with the highest minimum wage",
+  "title": "Top 10 Countries with the Highest Minimum Wage in 2023",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"
+  },
+  "transform": [
+    {"filter": {"field": "Minimum wage", "valid": true}},
+    {"calculate": "toNumber(datum['Minimum wage'])", "as": "MinimumWageNumeric"},
+    {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "MinimumWageNumeric", "order": "descending"}]},
+    {"filter": {"field": "rank", "lte": 10}}
+  ],
+  "encoding": {
+    "y": {"field": "Country", "type": "nominal", "sort": {"field": "rank", "order": "ascending"}},
+    "x": {"field": "Minimum wage", "type": "quantitative"},
+    "color": {"field": "Country", "type": "nominal", "scale": {"scheme": "purples"}},
+    "text": {"field": "Minimum wage", "type": "quantitative"},
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Minimum wage", "type": "quantitative", "format": "$,.2f"}
+    ]
+  },
+  "mark": {
+    "type": "bar",
+    "clip": true
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"grid": false}
   }
+}

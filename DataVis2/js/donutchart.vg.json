@@ -27,7 +27,7 @@
         }
       },
       {
-        "mark": {"type": "text", "baseline": "middle", "align": "center", "dx": 0, "dy": -10}, 
+        "mark": {"type": "text", "baseline": "middle", "align": "center", "dx": 0, "dy": -10,"fontWeight": "lighter"}, 
         "encoding": {
           "text": {"value": "World Average: "}
         }

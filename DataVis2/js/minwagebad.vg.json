@@ -1,6 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Bar chart of the top 10 countries with the highest minimum wage",
+    "title": "Top 10 Countries with the Lowest Minimum Wage in 2023",
     "data": {
       "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv"
     },
@@ -14,7 +15,7 @@
     "encoding": {
       "y": {"field": "Country", "type": "nominal", "sort": {"field": "rank", "order": "ascending"}},
       "x": {"field": "Minimum wage", "type": "quantitative"},
-      "color": {"field": "Country", "type": "nominal", "scale": {"scheme": "category20c"}},
+      "color": {"field": "Country", "type": "nominal", "scale": {"scheme": "blues"}},
       "text": {"field": "Minimum wage", "type": "quantitative"},
       "tooltip": [
         {"field": "Country", "type": "nominal"},

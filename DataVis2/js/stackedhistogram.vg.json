@@ -1,71 +1,72 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv",
-      "format": {
-        "type": "csv",
-        "parse": {"Life expectancy": "number"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/data/world-data-2023.csv",
+    "format": {
+      "type": "csv",
+      "parse": {"Life expectancy": "number"}
+    }
+  },
+  "params": [
+    {
+      "name": "country_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "North America", "South America", "Europe", "Africa", "Asia", "Australia/Oceania"],
+        "labels": ["Show All", "North America", "South America", "Europe", "Africa", "Asia", "Oceania"],
+        "name": "Continent Selection: "
       }
     },
-    "params": [
-      {
-        "name": "country_selection",
-        "bind": {
-          "input": "select",
-          "options": [null, "North America",
-          "South America",
-          "Europe",
-          "Africa",
-          "Asia",
-          "Australia/Oceania"],
-          "labels": ["Show All", "North America",
-          "South America",
-          "Europe",
-          "Africa",
-          "Asia",
-          "Oceania"],
-          "name": "Continent Selection: "
-        }
-      }
-    ],"transform": [
-      {
-        "filter": "country_selection == null || datum.Continent == country_selection"
-      }
+    {
+      "name": "barClick",
+      "select": "point"
+    }
+  ],
+  "transform": [
+    {
+      "filter": "country_selection == null || datum.Continent == country_selection"
+    },
+    {
+      "calculate": "indexof(['North America', 'South America', 'Europe', 'Africa', 'Asia', 'Australia/Oceania'], datum.Continent)",
+      "as": "order"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "bin": {"maxbins": 20},
+      "field": "Infant mortality",
+      "type": "quantitative",
+      "title": "Infant Mortality (per 1,000)"
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "title": "Count"
+    },
+    "color": {
+      "field": "Continent",
+      "type": "nominal",
+      "scale": {
+        "domain": ["North America", "South America", "Europe", "Africa", "Asia", "Australia/Oceania"],
+        "range": ["#c7e9c0", "#74c476", "#41ab5d", "#238b45", "#006d2c", "#00441b"]
+      },
+      "title": "Continent"
+    },
+    "order": {"field": "order", "type": "quantitative", "sort": "descending"},
+    "tooltip": [
+      {"field": "Continent", "title": "Continent"},
+      {"aggregate": "count", "title": "Count"}
     ],
-    "mark": "bar",
-    "encoding": {
-      "x": {
-        "bin": {"maxbins": 20},
-        "field": "Life expectancy",
-        "type": "quantitative",
-        "title": "Life Expectancy Bins"
-      },
-      "y": {
-        "aggregate": "count",
-        "type": "quantitative",
-        "title": "Count"
-      },
-      "color": {
-        "field": "Continent",
-        "type": "nominal",
-        "scale": {
-          "domain": [
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Australia/Oceania"
-          ],
-          "range": [
-            "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"
-          ]
-        }
-      ,
-        "title": "Continent"
-      }
+    "opacity": {
+      "condition": {"selection": "barClick", "value": 1},
+      "value": 0.2
     }
   }
+}
+
+
+
   
   
   
