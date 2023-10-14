@@ -62,7 +62,42 @@ body {
           "url": "https://raw.githubusercontent.com/mvitas1/3179/main/DataVis2/js/ne_110m_admin_0_countries.topojson",
           "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
         },
-        "projection": {"type": "equalEarth"},
+        "params": [
+                {
+                "name": "zoom_level",
+                "value": 150,
+                "bind": {
+                "input": "range",
+                "min": 150,
+                "max": 3500,
+                "step": 50,
+                "name": "Zoom: "
+                }
+                },
+                {
+                "name": "center_to",
+                "value": [0, 0],
+                "bind": {
+                "input": "select",
+                "options": [
+                  [0,0],
+                [18.499998, 49.3833318],
+                [90.3, 30.1],
+                [-100.9, 30.7],
+                [-60.1, -20.1],
+                [20.1, 0.1],
+                [135, -13.95]
+                ],
+                "labels": ["World","Europe", "Asia", "North America", "South America", "Africa", "Oceania"],
+                "name": "Centre of Map: "
+                }
+              }
+              ],
+        "projection": {"type": "equalEarth",
+                       "center": {"expr": "center_to"},
+                       "scale": {
+                        "expr": "center_to[0] === 0 && center_to[1] === 0 ? (zoom_level < 150 ? 150 : zoom_level) : (center_to[0] === 18.499998 && center_to[1] === 49.3833318 ? (zoom_level < 700 ? 700 : zoom_level) : (zoom_level < 300 ? 300 : zoom_level))"}
+                      },
         "layer": [
           {
             "transform": [
@@ -134,7 +169,7 @@ body {
       </div>
     </div>
     <p>
-      This map visualizes the Infant Mortality Rate per 1000 people in the year 2023 across different countries. The data is represented using a geographical map</p>
+      This map visualizes the Life Expectancy of people in the year 2023 across different countries. This shows that Australia sits with most Western countries to have a high Life Expectancy, while the majority of central African countries consistent of having much lower Life Expectancies.</p>
     </div>
 
     <div class="text-section" style="display: flex; flex-direction: column; align-items: center;">
@@ -162,9 +197,7 @@ body {
       <div style="flex: 1; text-align: right;">
         <div class="description" style="padding: 20px; text-align: center;">
           <p>
-            This interactive chart displays the relationship between Life Expectancy and Infant mortality for various countries. 
-            You can adjust the population threshold using the slider above to filter countries by population. 
-            The size of each circle represents the population of a country, and you can hover over the circles to view additional information.
+            This interactive chart further explores Infant Mortality rates across countries. You can use a slider to filter countries by population, and the chart visualizes this relationship. Hover over data points to access detailed information about each country.
           </p>
         </div>
       </div>
@@ -199,7 +232,7 @@ body {
       <div style="flex: 1; text-align: left;">
         <div class="description" style="text-align: left;">
             <p>
-                <strong>Australia</strong> stands out prominently on this chart, boasting the highest minimum wage among the top 10 countries. As you can see, the majority of these countries with the highest minimum wages are European nations, reflecting their commitment to fair labor practices and ensuring a decent standard of living for their workers. This chart provides a visual representation of the minimum wage levels in these select countries, with Australia leading the way.
+              This chart explores whether a country's minimum wage impacts its unemployment rate. It includes a visual representation of minimum wage levels in select countries and examines their potential correlation with unemployment rates. Australia's high minimum wage is particularly prominent, indicating the potential influence of wage policies on employment.
             </p>
         </div>
     </div>
