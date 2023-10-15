@@ -31,6 +31,8 @@
       "as": "order"
     }
   ],
+  "title": "Infant Mortality Rates by Continent"
+  ,
   "mark": "bar",
   "encoding": {
     "x": {

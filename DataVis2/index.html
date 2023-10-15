@@ -35,14 +35,10 @@ body {
 </style>
 <body>
   <h1 style="text-align: center; margin-bottom: 0; font-family: 'Open Sans', sans-serif;">World Human Health & Economy</h1>
-  <h4 style="text-align: center; margin-top: 1; color: #464646; font-family: 'Open Sans', sans-serif; font-style: italic;">Data Visualization 2 by Marc Vitas</h4>
+  <h4 style="text-align: center; margin-top: 1; color: #000000; font-family: 'Open Sans', sans-serif; font-style: italic;">Data Visualization 2 by Marc Vitas</h4>
   <div class="text-section">
   
-  <p style="text-align: center; margin-top: 0; font-family: 'Open Sans', sans-serif; font-style: italic; font-size:medium; font-weight: bold;">Introducing a visualisation containing data from the "Global Country Information Dataset 2023"</p>
-  <p>
-    Which is a comprehensive collection of vital statistics and indicators that offer 
-    insights into the state of our <strong>global health & economy</strong>. This a valuable resource that provides a 
-    view of the factors influencing public health and prosperity worldwide. This data visualisation highlights trends to showcase 
+  <p style="text-align: center; margin-top: 0; font-family: 'Open Sans', sans-serif; font-style: italic; font-size:medium; padding-left: 50px; padding-right: 50px;">Introducing a visualisation containing data from the "Global Country Information Dataset 2023" offering insights into the state of <strong>global health & economy</strong>. Providing factors influencing public health and prosperity worldwide. This data visualisation highlights trends to showcase 
     opportunities for <strong>improving the well-being of populations</strong> across the globe. Whether you're a skeptic, 
     or anyone passionate about global health & Economy, this visualisation is your <strong>key to understanding critical factors</strong> on a global scale.</p>
   </div>
@@ -167,7 +163,7 @@ body {
         </div>
       </div>
     </div>
-    <p>
+    <p style="padding-right: 100px; padding-left: 100px;">
       This map visualizes the Life Expectancy of people in the year 2023 across different countries. This shows that <strong>Australia</strong> sits with most <strong>Western countries</strong> to have a <strong>high Life Expectancy</strong>, while the majority of <strong>Central African</strong> countries consistent of having much <strong>lower Life Expectancies.</strong> <em>(Use the Zoom and Centre of Map functions to gain a closer insight to each specific area of the world.)</em></p>
     </div>
 
@@ -193,23 +189,34 @@ body {
   <div class="text-section" style="display: flex; flex-direction: column; align-items: center; text-align: left;">
     <h3 style="text-align: left; ">How Do Infant Mortality Rates per 1000 Differ?</h3>
     <div style="display: flex; justify-content: center;">
-      <div style="flex: 1; text-align: right;">
-        <div class="description" style="padding: 20px; text-align: center;">
-          <p>
-            This interactive chart further explores Infant Mortality rates across the continents. Ultimately showing that <strong>Europe</strong> has the lowest infant mortality rates with the majority of its countries sitting between 0 and 5. While the highest continues to be the <strong>African</strong> continent with some highs stretching up to 80+ per 1000 people.
-          </p>
+        <div style="flex: 1; text-align: right;">
+            <div class="description" style="padding: 20px; text-align: center;">
+                <p>
+                    This interactive chart further explores Infant Mortality rates across the continents. Ultimately showing that <strong>Europe</strong> has the lowest infant mortality rates with the majority of its countries sitting between 0 and 5. While the highest continues to be the <strong>African</strong> continent with some highs stretching up to 80+ per 1000 people.
+                </p>
+            </div>
         </div>
-      </div>
-      <div style="flex: 1; text-align: left;">
-        <div id="vis7" class="vis-container"></div>
-      </div>
+        <div style="flex: 1; text-align: left;">
+            <div id="vis7" class="vis-container"></div>
+        </div>
     </div>
-  </div>
+    <hr style="width: 90%; border-top: 1px solid #333333;">
+    <div style="display: flex; justify-content: center;">
+        <div style="flex: 1; text-align: right;">
+            <div id="vis5" class="vis-container"></div>
+        </div>
+        <div style="flex: 1; padding: 20px; text-align: center;">
+            <p>As shown the highest average infant mortality rates continue to be <strong>Africa</strong> with the <strong>highest average infant mortality rate of 43.84</strong> while the <strong>lowest</strong> again shows with <strong>Europe</strong> with an average infant mortality rate of <strong>3.83.</strong></p><p> While all other continents sit with similar infant mortality rate <strong>averages around 14-17.</strong> Further showing how health factors are a concern in Africa while postiive in Europe. </p>
+        </div>
+    </div>
+</div>
+
+
 
   <div class="text-section" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
     <h3>Countries with the Highest & Lowest Minimum Wage</h3>
     <div class="text-container">
-      <p>
+      <p style="padding-left: 50px; padding-right: 50px;">
         <strong>Australia</strong> stands out prominently on this chart, boasting the highest minimum wage among the top 10 countries. As you can see, the majority of these countries with the highest minimum wages are <strong>European</strong> nations, reflecting a higher standard of living for their workers. While the <strong>lowest minimum wage</strong> countries consist of <strong>Uganda and Venezuela</strong> which sit significantly lower than any other country with a minmum wage of <strong>$0.01 (USD).</strong>
       </p>
     </div>
@@ -229,7 +236,7 @@ body {
     <h3 style="margin-bottom: 0; padding: 10px; text-align: center;">Does a countries Minimum Wage Affect Unemployement Rate?</h3>
     <div style="display: flex; align-items: center;">
       <div style="flex: 1; text-align: left;">
-        <div class="description" style="text-align: left;">
+        <div class="description" style="text-align: center; padding-bottom: 40px;">
             <p>
               This chart explores whether a country's minimum wage impacts its unemployment rate. As shown it is evident that a higher the countries minimum wage the lower a countries unemployement rate % will be. Such as Australia's</strong> high minimum wage which leads to a <strong>low unemployement rate of 5%,</strong> while a country like <strong>Turkey</strong> with a minimum wage of <strong>$3.45 (USD)</strong> leads to a <strong>higher unemployment rate of 13%</strong>.
             </p>

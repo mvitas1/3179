@@ -19,7 +19,10 @@
         "mark": {"type": "arc", "innerRadius": 50},
         "encoding": {
           "theta": {"field": "Infant mortality", "type": "quantitative", "aggregate": "average"},
-          "color": {"field": "Continent", "type": "nominal"},
+          "color": {"field": "Continent", "type": "nominal","scale": {
+            "domain": ["North America", "South America", "Europe", "Africa", "Asia", "Australia/Oceania"],
+            "range": ["#c7e9c0", "#74c476", "#41ab5d", "#238b45", "#006d2c", "#00441b"]
+          }},
           "tooltip": [
             {"field": "Continent", "title": "Continent"},
             {"field": "Infant mortality", "type": "quantitative", "aggregate": "average", "title": "Avg Infant Mortality", "format": ".2f"}
@@ -27,7 +30,7 @@
         }
       },
       {
-        "mark": {"type": "text", "baseline": "middle", "align": "center", "dx": 0, "dy": -10,"fontWeight": "lighter"}, 
+        "mark": {"type": "text", "baseline": "middle", "align": "center", "dx": 0, "dy": -10,"fontWeight": "normal","fontSize": 11.5,"fontStyle": "italic"}, 
         "encoding": {
           "text": {"value": "World Average: "}
         }
