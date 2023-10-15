@@ -51,4 +51,5 @@ body::before {
   .pure-g {
 	display: flex;
 	flex-wrap: wrap;
+  padding-left: 50px;
   }

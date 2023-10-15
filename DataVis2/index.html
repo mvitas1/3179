@@ -14,7 +14,7 @@
 <style>
 
 body {
-  
+  background-image: url(images/background.jpg);
   background-color: #333333;
   background-size: cover; /* Ensure the image covers the entire background */
   background-repeat: no-repeat;
@@ -34,11 +34,12 @@ body {
 
 </style>
 <body>
-  <h1 style="text-align: center; margin-bottom: 0; font-family: 'Open Sans', sans-serif;">World Human Health & Economy</h1>
-  <h4 style="text-align: center; margin-top: 1; color: #000000; font-family: 'Open Sans', sans-serif; font-style: italic;">Data Visualization 2 by Marc Vitas</h4>
+  <div class ="text-section"><h1 style="text-align: center; margin-bottom: 0; font-family: 'Open Sans', sans-serif; padding-left: 228.5px; padding-right: 228.5px;">World Human Health & Economy</h1>
+    <h4 style="text-align: center; margin-top: 1; color: #000000; font-family: 'Open Sans', sans-serif; font-style: italic;">Data Visualization 2 by Marc Vitas</h4></div>
+  
   <div class="text-section">
   
-  <p style="text-align: center; margin-top: 0; font-family: 'Open Sans', sans-serif; font-style: italic; font-size:medium; padding-left: 50px; padding-right: 50px;">Introducing a visualisation containing data from the "Global Country Information Dataset 2023" offering insights into the state of <strong>global health & economy</strong>. Providing factors influencing public health and prosperity worldwide. This data visualisation highlights trends to showcase 
+  <p style="text-align: center; margin-top: 0; font-family: 'Open Sans', sans-serif; font-style: italic; font-size:medium; padding-left: 50px; padding-right: 50px; padding-top: 10px;">Introducing a visualisation containing data from the <strong>"Global Country Information Dataset 2023"</strong> offering insights into the state of <strong>global health & economy</strong>. Providing factors influencing public health and prosperity worldwide. This data visualisation highlights trends to showcase 
     opportunities for <strong>improving the well-being of populations</strong> across the globe. Whether you're a skeptic, 
     or anyone passionate about global health & Economy, this visualisation is your <strong>key to understanding critical factors</strong> on a global scale.</p>
   </div>
@@ -167,17 +168,17 @@ body {
       This map visualizes the Life Expectancy of people in the year 2023 across different countries. This shows that <strong>Australia</strong> sits with most <strong>Western countries</strong> to have a <strong>high Life Expectancy</strong>, while the majority of <strong>Central African</strong> countries consistent of having much <strong>lower Life Expectancies.</strong> <em>(Use the Zoom and Centre of Map functions to gain a closer insight to each specific area of the world.)</em></p>
     </div>
 
-    <div class="text-section" style="display: flex; flex-direction: column; align-items: center;">
-      <h3 style="text-align: center; margin-bottom: 0; padding: 10px;">Life Expectancy vs Infant Mortality</h3>
-      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div style="width: 65%;">
-              <div id="vis1" class="vis-container" style="text-align: left;"></div>
+    <div class="text-section" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <h3 style="text-align: center;">Life Expectancy vs Infant Mortality</h3>
+      <div style="display: flex; justify-content: center;">
+          <div style="flex: 1; text-align: left;">
+              <div id="vis1" class="vis-container"></div>
           </div>
-          <div style="width: 30%;">
+          <div style= "flex: 1; text-align: left; padding-top: 40px;">
               <div class="description">
                   <p>
                       Displaying the relationship between Life Expectancy and Infant mortality for different countries. 
-                      <strong>Australia</strong> again boasts very low infat mortality rates which allow it to sit with some of the healthiest countries in the world in terms of health.
+                      <strong>Australia</strong> again boasts very low infant mortality rates which allow it to sit with some of the healthiest countries in the world in terms of health.
                       While the most of the African countries like <strong>Somalia</strong> contain health struggles with both factors.
                       Overall showing that these two factors do relate as it seems the higher the infant mortality rate the lower the life expectancy.
                   </p>
@@ -206,7 +207,7 @@ body {
             <div id="vis5" class="vis-container"></div>
         </div>
         <div style="flex: 1; padding: 20px; text-align: center;">
-            <p>As shown the highest average infant mortality rates continue to be <strong>Africa</strong> with the <strong>highest average infant mortality rate of 43.84</strong> while the <strong>lowest</strong> again shows with <strong>Europe</strong> with an average infant mortality rate of <strong>3.83.</strong></p><p> While all other continents sit with similar infant mortality rate <strong>averages around 14-17.</strong> Further showing how health factors are a concern in Africa while postiive in Europe. </p>
+            <p>As shown the <strong>worldwide average</strong> sits at a rate of <strong>21.64</strong>. The highest average infant mortality rates continue to be <strong>Africa</strong> with the <strong>highest average infant mortality rate of 43.84</strong> while the <strong>lowest</strong> again shows with <strong>Europe</strong> with an average infant mortality rate of <strong>3.83.</strong></p><p> While all other continents sit with similar infant mortality rate <strong>averages around 14-17 per 1000.</strong> Further showing how health factors are a concern in Africa while postiive in Europe. </p>
         </div>
     </div>
 </div>

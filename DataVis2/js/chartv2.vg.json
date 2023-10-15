@@ -61,7 +61,7 @@
         "tooltip": [
           {"field": "Country", "type": "nominal", "title": "Country"},
           {"field": "Unemployment rate", "type": "quantitative", "title": "Unemployment rate"},
-          {"field": "Minimum wage", "type": "quantitative", "title": "Minimum Wage ($USD)"}
+          {"field": "Minimum wage", "type": "quantitative", "title": "Minimum Wage ($USD)", "format": "$,.2f"}
         ]
       }
     },
@@ -94,7 +94,7 @@
         "tooltip": [
           {"field": "Country", "type": "nominal", "title": "Country"},
           {"field": "Unemployment rate", "type": "quantitative", "title": "Unemployment rate"},
-          {"field": "Minimum wage", "type": "quantitative", "title": "Minimum Wage ($USD)"}
+          {"field": "Minimum wage", "type": "quantitative", "title": "Minimum Wage ($USD)", "format": "$,.2f"}
         ]
       }
     }
