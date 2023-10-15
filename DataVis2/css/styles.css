@@ -5,7 +5,7 @@ body::before {
     left: -2px; /* Adjust to match border width */
     right: -2px; /* Adjust to match border width */
     bottom: -2px; /* Adjust to match border width */
-    background-color: #c7c7c7; 
+    background-color: #525252; 
     z-index: -1; 
 }
 
@@ -15,10 +15,9 @@ body::before {
 	background-color: #fff; /* White background color */
 	padding: 10px; /* Add some padding for spacing */
 	margin: 10px; /* Add margin to separate text sections */
-  border: 2px solid #333;
+  border: 1px solid #333;
 	border-radius: 5px; /* Add rounded corners for a cleaner look */
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
-	border-radius: 0px;
 	color: #333; /* Set text color to a dark grey or adjust as needed */
 	font-size: 16px; /* Set font size as needed */
 	line-height: 1.5; /* Adjust line height for readability */
